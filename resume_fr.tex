@@ -1,0 +1,132 @@
+\documentclass[11pt, a4paper, final]{resume}
+
+\usepackage{setspace}
+
+%%% Override a directory location for fonts(default: 'fonts/')
+\fontdir[fonts/]
+
+
+% for debugging purposes
+%\overfullrule=5pt
+
+\renewcommand{\baselinestretch}{1}
+
+\begin{document}
+	
+	\header
+		{Médéric}
+		{Fourmy}
+		{8 Grande Rue Saint Michel, 31400 Toulouse - France}
+		{mederic.fourmy@supaero.isae.fr}
+		{+33672745468}
+	
+	
+	\cvsection{Education}
+	\begin{cventries}
+		\cventry
+		{ISAE-SUPAERO}
+		{École d'ingénieur aéronautique. Spécialisation en robotique, science de la décision, recherche opérationnelle}
+		{Toulouse, France}
+		{Sept. 2014 - 2018}
+		{}
+		\cventry
+		{Lycée Gay-Lussac}
+		{Classes Préparatoires scientifiques section Physique Chimie}
+		{Limoges, France}
+		{2011 - 2014}
+		{}
+		\cventry
+		{Lycée Gay-Lussac}
+		{Baccalauréat scientifique option physique-chimie}
+		{Limoges, France}
+		{2008 - 2011}
+		{}
+	\end{cventries}
+	
+	\cvsection{Expérience professionnelle}
+	\begin{cventries}
+		\cventry
+		{Activus Services}
+		{Stagiaire en science de la donnée}
+		{Limoges, France}
+		{2011 - 2014}
+		{
+			\begin{cvitems}{}
+				\item Prédiction de l'activité d'un réseau informatique par Machine Learning à l'aide de Python et Spark
+				\item Développement d'un outil d'analyse du marché de l'emploi français basé sur un web scraper 
+			\end{cvitems}
+		}
+		\cventry
+		{Sfara}
+		{Stagiaire développeur web full-stack et analyse de donnée}
+		{Hoboken NJ, USA}
+		{Sept. 2016 - Mars 2017}
+		{
+			Start-up développant une application analysant la conduite des usagers via les capteurs de leur smartphone
+			\begin{cvitems}{azeazezaezaezae}
+				\item Participation au développement du portail d'analyse de données basé sur le framework Flask
+				\item Création d'un écran de visualisation de différentes métriques en temps réel basée sur un server Web-Socket
+				\item Création d'outil internes, notamment des scripts de création automatique de rapports clients hebdomadaires et un interface permettant la création de requêtes vers une base de donnée de type PostgreSQL
+			\end{cvitems}
+		}
+	\end{cventries}
+	
+	
+	\cvsection{Projets}
+	\begin{cventries}
+		\cventry
+		{Projet de dernière année}
+		{Génération rapide de trajectoire pour une voiture autonome}
+		{Toulouse, France}
+		{Oct. 2017 - Mars 2018}
+		{
+			\begin{cvitems}{}
+				\item Doing this
+				\item Doing that
+			\end{cvitems}
+		}
+		\cventry
+		{Challenge Aérospatial Étudiant}
+		{Système de propulsion pour un véhicule suborbital habité}
+		{Toulouse, France}
+		{Sept. 2016 - Mars 2017}
+		{
+			Design préliminaire d'un moteur solide pour un véhicule suborbital habité. Travail réalisé, et présenté à la Journée suborbitalle au Musée de l'Air et de l'Espace, en tant que membre de la Supaero Propulsion Team pour lequel nous avons reçu le prix Airbus Group.
+		}
+		\cventry
+		{Projet de recherche de seconde année}
+		{Aérodynamique numérique}
+		{Toulouse, France}
+		{Sept. 2016 - Mars 2017}
+		{
+			Évaluation par CFD de l’influence des distorsions de l’écoulement amont sur le rendement d’un ventilateur
+			réversible en partenariat avec Safran-Technofan
+		}
+	\end{cventries}
+	
+	
+	\cvsection{Informatique}
+	\begin{cvskills}
+		\cvskill{Programming}{Python, Javascript, C/C++, Java, Matlab}
+		\cvskill{Datascience}{Scikit-learn, Pyspark, Tensorflow, Keras}
+		\cvskill{DevOps}{Git, Docker, Jenkins, Kafka}
+		\cvskill{Web}{Flask, Vuejs, HTML, CSS}
+		\cvskill{Bureautique}{Latex, MS Office, Weasyprint}
+	\end{cvskills}
+	
+	\cvsection{Langues}
+	
+	\cvlanguages
+	{Français}{ \fiveoverfive }
+	{Anglais}{ \fourandahalfoverfive }
+	{Portugais}{ \twooverfive }
+	{}{}
+	
+	\cvsection{Activités hors cursus}
+	\begin{cvskills}
+		\cvskill{Associations}{Club robotique, responsable du club musique de supaero}
+		\cvskill{Musique}{basse, guitare, harpe, improvisation}
+		\cvskill{Sport}{Badminton}
+	\end{cvskills}	
+	
+\end{document}
