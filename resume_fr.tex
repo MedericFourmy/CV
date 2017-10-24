@@ -11,7 +11,7 @@
 
 
 % for debugging purposes
-%\overfullrule=5pt
+\overfullrule=5pt
 
 \renewcommand{\baselinestretch}{1}
 
@@ -110,23 +110,25 @@
 		}
 	\end{cventries}
 
-
-	\cvsection{Informatique}
-	\begin{cvskills}
-		\cvskill{Langages}{Python, C++, Javascript, Java, Matlab}
-		\cvskill{Data Science}{Scikit-learn, Pyspark, Tensorflow, Keras}
-		\cvskill{DevOps}{Git, Docker, Jenkins, Kafka}
-		\cvskill{Web}{Flask, Vuejs, HTML, CSS}
-		\cvskill{Bureautique}{Latex, MS Office, Weasyprint}
-	\end{cvskills}
-
-	\cvsection{Langues}
-
-	\cvlanguages
-	{Français}{Langue natale}
-	{Anglais}{Courant (C1)}
-	{Portugais}{Intermédiaire (B2)}
-	{}{}
+	\begin{minipage}[t]{.49\textwidth}
+		\cvsection{Informatique}
+		\begin{cvskills}
+			\cvskill{Langages}{Python, C++, Javascript, Java, Matlab}
+			\cvskill{Data Science}{Scikit-learn, Pyspark, Tensorflow, Keras}
+			\cvskill{DevOps}{Git, Docker, Jenkins, Kafka}
+			\cvskill{Web}{Flask, Vuejs, HTML, CSS}
+			\cvskill{Bureautique}{Latex, MS Office, Weasyprint}
+		\end{cvskills}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{.49\textwidth}
+		\cvsection{Langues}
+		\begin{cvskills}
+			\cvskill{Français}{Langue natale}
+			\cvskill{Anglais}{Courant (C1)}
+			\cvskill{Portugais}{Intermédiaire (B2)}
+		\end{cvskills}
+	\end{minipage}
 
 	\cvsection{Activités hors cursus}
 	\begin{cvskills}
