@@ -14,7 +14,7 @@
 %-------------------------------------------------------------------------------
 % Options for draft or final
 % \setlength: change the values of the variables defining the page layout
-% \overfullrule: 
+% \overfullrule:
 \DeclareOption{draft}{\setlength\overfullrule{5pt}}
 \DeclareOption{final}{\setlength\overfullrule{0pt}}
 % Inherit options of article
@@ -198,7 +198,7 @@ BoldItalicFont=*-SemiboldIt
 \newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{graytext} #1}}
-% 
+%
 \newcommand*{\descriptionstyle}[1]{{
 	 \setstretch{1.0}
 	 \fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1
@@ -218,7 +218,7 @@ BoldItalicFont=*-SemiboldIt
 \newcommand{\statcirc}[2]{%
 	\begin{tikzpicture}
 	\fill[#1] (0,0) circle (0.6ex);
-	\fill[#2] (0,0) -- (90:0.4ex) arc (90:-90:0.4ex) -- cycle; 
+	\fill[#2] (0,0) -- (90:0.4ex) arc (90:-90:0.4ex) -- cycle;
 	\end{tikzpicture}
 }
 \newcommand{\halfcircle}{\statcirc{awesome}{white}}
@@ -247,23 +247,25 @@ BoldItalicFont=*-SemiboldIt
 \newcommand*{\ifempty}[3]{\ifthenelse{\isempty{#1}}{#2}{#3}}
 
 
-\newcommand{\header}[5]{
+\newcommand{\header}[7]{
 	\begin{center}
 		\firstnamestyle{#1} \lastnamestyle{#2} \\
 		\vspace{0.4cm}
-		\addressstyle{#3} \\ 
-		\emailstyle{#4}~~\fullgraycircle~~\telephonestyle{#5} \\
+		\addressstyle{#3} \\
+		\emailstyle{#4}~~\fullgraycircle~~\telephonestyle{#5}~~\fullgraycircle~~\href{https://www.linkedin.com/in/mederic-fourmy-738aa3110/}{\faLinkedinSquare}  \\
 	\end{center}
+	\vspace{0.2cm}
+	\entrytitlestyle{\underline{\textbf{#6}:} #7}
 }
 
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{
-	
+
 	\vspace{0.2cm}
 	\sectionstyle{#1}
 	\hrulefill{0.2pt}
-	
+
 	\vspace{-0.1cm}
 }
 
@@ -294,13 +296,13 @@ BoldItalicFont=*-SemiboldIt
 	\end{tabular*}
 	% back to normal
 	\renewcommand{\arraystretch}{1}
-	
+
 	% !!! Necessary to end the paragraph by inserting an empty line so that the vspace work
 	% a commentary does not count as an empty line
 	\ifempty{#5}{
 		\vspace{-1cm}
 	}{
-		\vspace{-0.5cm}
+		\vspace{-0.6cm}
 	}
 }
 
@@ -319,6 +321,7 @@ BoldItalicFont=*-SemiboldIt
 
 % Define an environment for cvskill
 \newenvironment{cvskills}{
+	\vspace{0.2cm}
 	\begin{center}
 		\setlength\tabcolsep{1ex}
 		\setlength{\extrarowheight}{0pt}
@@ -346,6 +349,6 @@ BoldItalicFont=*-SemiboldIt
 		 &\descriptionstyle{\textbf{#5} \enskip #6}
 		 & \descriptionstyle{\textbf{#7} \enskip #8}
 	\end{tabular*}
-	
+
 	\vspace{-0.5cm}
 }
