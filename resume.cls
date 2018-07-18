@@ -254,8 +254,13 @@ BoldItalicFont=*-SemiboldIt
 		\addressstyle{#3} \\
 		\emailstyle{#4}~~\fullgraycircle~~\telephonestyle{#5}~~\fullgraycircle~~\href{https://www.linkedin.com/in/mederic-fourmy-738aa3110/}{\faLinkedinSquare}  \\
 	\end{center}
-	\vspace{0.2cm}
-	\entrytitlestyle{\underline{\textbf{#6}:} #7}
+	\ifempty{#6#7}
+	{}
+	{
+		\vspace{0.2cm}
+		\entrytitlestyle{\underline{\textbf{#6}:} #7}
+	}
+	
 }
 
 % Define a section for CV
