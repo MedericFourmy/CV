@@ -5,6 +5,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{setspace}
+\usepackage{needspace} % in the preamble
+
 
 %%% Override a directory location for fonts(default: 'fonts/')
 \fontdir[fonts/]
@@ -14,135 +16,173 @@
 
 \renewcommand{\baselinestretch}{1}
 
+% publication{authors}{title}{conference description}
+\newcommand*{\publication}[3]{{
+	\needspace{4\baselineskip} % ensure at least 4 lines fit
+	\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}
+		{#1}\\[-0.3em]
+		{\textit{#2}}\\[-0.3em]
+		{#3}
+}}
+
+
 \begin{document}
 
-	\header
-		{Médéric}
-		{Fourmy}
-		{8 Grande Rue Saint Michel, 31400 Toulouse - France}
-		{mederic.fourmy@supaero.isae.fr}
-		{+33672745468}
-		{}{}
-		%{Objective}
-		%{Looking for an internship in robotics research from April 2018 for 6 months}
 
-	\cvsection{Education}
+	\begin{center}
+		\namestyle{Médéric Fourmy}  \\
+		\vspace{0.3cm}
+		\emailstyle{\faEnvelope~mederic.fourmy@gmail.com} ~~
+		\href{https://mederic.fourmy.github.io/}{\emailstyle{\faGlobe~mederic.fourmy.github.io}} ~~
+		\href{https://github.com/MedericFourmy/}{\emailstyle{\faGithub~Github}}  ~~
+		\href{https://www.linkedin.com/in/mederic-fourmy-738aa3110/}{\emailstyle{\faLinkedin~LinkedIn}}  ~~
+		\href{https://scholar.google.com.au/citations?user=eBMti0cAAAAJ&hl=en}{\emailstyle{\faGraduationCap~Google Scholar}}
+	\end{center}
+	\vspace{0.2cm}
+	I am a postdoc researcher at CIIRC-CTU in Prague, working at the interface between model-based
+	robotics control and computer vision. My work focuses on developing robust and generalizable object pose estimation methods, robot optimal control for grasping and visual servoing
+	tasks. I am looking for a research scientist/engineer position in robotics/AI.
+
+	\cvsection{Education and academia experience}
 	\begin{cventries}
 		\cventry
-		{ISAE-SUPAERO}
-		{The French school of Aerospace engineering, Msc 2 in Robotics and Data Science}
-		{Toulouse, France}
-		{2014 - 2018}
-		{}
-		\cventry
-		{ENAC and ISAE-SUPAERO}
-		{Research master in Operationnal Research}
-		{Toulouse, France}
-		{2018}
-		{Courses in global deterministic optimisation, stochastic optimisation and advanced combinatory optimisation}
-		\cventry
-		{Lycée Gay-Lussac}
-		{Advanced undergraduate course in Mathematics, Physics and Chemistry}
-		{Limoges, France}
-		{2011 - 2014}
-		{}
-	\end{cventries}
+		{Postdoc in Robotics and Computer vision}
+		{CIIRC-CTU, IMPACT (Josef Sivic)}
+		{2022 - current}
+		{Prague, Czech Republic}
+		{
+			\begin{cvitems}{}
+				\item Conducted research on object pose detection and tracking, torque-based optimal control for a robot manipulator, and VLAs benchmarking. Supervision of 5 Msc. and Bsc. students.
+				\item BOP project: Maintainer of the object pose estimation benchmark for the BOP challenge 24 and 25 
+				(6 new datasets included, 10x faster online leaderboard) and the open-source BOP toolkit. Participation to the R6D workshops (ECCV-24, ICCV-25). 
+				\item Reviewer for TRO, IJCV, RAL, ICRA, IROS.
+			\end{cvitems}
+		}
 
-	\cvsection{Work experience}
-	\begin{cventries}
 		\cventry
+		{PhD. in Robotics}
+		{LAAS-CNRS}
+		{2018 - 2022}
+		{Toulouse, France}
+		{	
+			\begin{cvitems}{}
+				\item Thesis: \textit{State estimation and localization of legged robots based on a-posteriori maximization}
+				\item Supervisors: Nicolas Mansard, Joan Solà
+			\end{cvitems}
+		}
+
+		\cventry
+		{Master Thesis in Underwater Robotics}
 		{Heriot-Watt University}
-		{Robotics control visiting scholar}
+		{2018 (6 months)}
 		{Edinburgh, UK}
-		{current (6 months)}
 		{
 			\begin{cvitems}{}
-				\item Implemented and tested control schemes for 6DOF underwater robotics arm based on visual servoing and force control
+				\item Thesis: \textit{Visual servoing and impedance control for an underwater robotics manipulator}
+				\item Supervisor: Yvan Petillot
 			\end{cvitems}
 		}
+		
 		\cventry
-		{Activus Services}
-		{Data science intern}
+		{MSc. in Operationnal Research}
+		{ENAC and ISAE-SUPAERO}
+		{2018}
 		{Toulouse, France}
-		{2017 (5 months)}
 		{
-			\begin{cvitems}{}
-				\item Built models for the computer network activity prediction with Machine Learning using Python and Spark
-				\item Developed a French job market analysis tool including a web Scraper
-			\end{cvitems}
+			Courses in global deterministic, stochastic, and combinatory optimisation.
 		}
+
 		\cventry
-		{Sfara}
-		{Full stack web developer and data analyst intern}
-		{Hoboken NJ, USA}
-		{2016 - 2017 (6 months)}
+		{Aerospace Engineering school}
+		{ISAE-SUPAERO}
+		{2014 - 2018}
+		{Toulouse, France}
 		{
-			\begin{cvitems}{}
-				\item Participated to the development of the analytics web site on the back-end (Flask) and front-end (Vuejs)
-				\item Created internal tools, including an automatic weekly report generation script and a SQL query generation interface and a monitoring board being updated with Web Sockets
-			\end{cvitems}
+			Courses in aircraft design, numerical simulation, computer science and related topics. Specialization on Robotics and Data Science.
+			% \begin{cvitems}{}
+			% 	\item Last year Robotics project: Fast trajectory generation for an autonomous car using memory of motion.
+			% 	\item Last year DataScience project: Playing Flappy Bird with Deep Q-Learning.
+			% 	\item Student Aerospace Challenge: won the Airbus Group Prize for our work on the "Preliminary design of a solid propulsion motor for a manned suborbital vehicle".
+			% 	\item Supaero robotics club: participation to the 2016 robotics cup.
+			% \end{cvitems}
 		}
+
 	\end{cventries}
 
-
-	\cvsection{Projects}
+	\cvsection{Industry experience}
 	\begin{cventries}
 		\cventry
-		{Last year innovation project}
-		{Fast trajectory generation for an autonomous car using memory of motion}
+		{Data analyst}
+		{Activus Group}
+		{2017 (5 months)}
 		{Toulouse, France}
-		{2017 - 2018}
 		{
-			\begin{cvitems}{}
-				\item Simulation model of the car implemented using ROS and Gazebo
-				\item Development of the Neural Network training with Tensorflow
-			\end{cvitems}
+			Computer network activity prediction and web scraping for job market analysis.
 		}
+	\end{cventries}
+	\begin{cventries}
 		\cventry
-		{Student aerospace challenge}
-		{Manned suborbital vehicle propulsion system design}
-		{Toulouse, France}
-		{2016 - 2017}
+		{Full stack web developer}
+		{Sfara}
+		{2016 - 2017 (6 months)}
+		{Hoboken NJ, USA}
 		{
-			Preliminary design of a solid propulsion motor for a manned suborbital vehicle. Worked as part of the Supaero Propulsion team and presented our
-			results during the Suborbital Day at the Paris Air and Space Museum. Won the Airbus Group Prize.
-		}
-		\cventry
-		{Msc 1 year research project}
-		{Computational Fluid Dynamics}
-		{Toulouse, France}
-		{2016 - 2017}
-		{
-			Assessment of the influence of upstream flow distortions on the efficiency of a
-			reversible cooling fan thanks to numerical computation for Safran-Technofan
+			Development of a car fleet analytics web site (Flask+Vuejs), internal tools creations.
 		}
 	\end{cventries}
 
-		\begin{minipage}[t]{.49\textwidth}
-			\cvsection{IT}
-			\begin{cvskills}
-				\cvskill{Programming}{Python, C++, Matlab, Javascript, Java}
-				\cvskill{Datascience}{Scikit-learn, Pyspark, Tensorflow, Keras}
-				\cvskill{DevOps}{Git, Docker, Jenkins, Kafka}
-				\cvskill{Web}{Flask, Vuejs, HTML, CSS}
-				\cvskill{Office automation}{\LaTeX, MS Office, Weasyprint}
-			\end{cvskills}
-		\end{minipage}
-		\hfill
-		\begin{minipage}[t]{.49\textwidth}
-			\cvsection{Languages}
-			\begin{cvskills}
-				\cvskill{French}{Native}
-				\cvskill{English}{Fluent, 7 months stay in New York area}
-				\cvskill{Portuguese}{Beginner}
-			\end{cvskills}
-		\end{minipage}
 
-	\cvsection{Extra curricular activities}
-	\begin{cvskills}
-		\cvskill{Clubs}{Robotics club, head of the Supaero music club}
-		\cvskill{Music}{Bass (10 years), guitar, harp, jazz improvisation}
-		\cvskill{Sport}{Badminton}
-	\end{cvskills}
+	\cvsection{Selected Publications}
+		\begin{itemize}[leftmargin=3ex, nosep, noitemsep]
+			\setlength{\parskip}{0pt}
+			\renewcommand{\labelitemi}{$\bullet$}  % $$ needed HERE !
+			\item \publication
+			{Ponimatkin G, Cífka M, Souček T, \textbf{Fourmy M}, Labbé Y, Petrik V, Sivic J.}
+			{6D Object Pose Tracking in Internet Videos for Robotic Manipulation}
+			{ICLR, 2025}
+			\item \publication
+			{Nguyen VN, Tyree S, Guo A, \textbf{Fourmy M}, Gouda A, Lee T, Moon S, Son H, Ranftl L, Tremblay J et al.}
+			{BOP Challenge 2024 on Model-Based and Model-Free 6D Object Pose Estimation.}
+			{CVPRW, 2025, Best Workshop Paper Award}
+			\item \publication
+			{Zorina K, Priban V, \textbf{Fourmy M}, Sivic J, Petrik V.}
+			{Temporally Consistent Object 6D Pose Estimation for Robot Control}
+			{RAL, 2025}
+			\item \publication
+			{Haffemayer A, Jordana A, \textbf{Fourmy M}, Wojciechowski K, Saurel G, Petrík V, Lamiraux F, Mansard N.}
+			{Model Predictive Control Under Hard Collision Avoidance Constraints for a Robotic Arm}
+			{Ubiquitous Robots, 2024}
+			\item \publication
+			{Sola J, Vallvé J, Casals J, Deray J, \textbf{Fourmy M}, Atchuthan D, et al.}
+			{WOLF: A modular estimation framework for robotics based on factor graphs}
+			{RAL, 2022}	
+			\item \publication
+			{\textbf{Fourmy M}, Flayols T, Léziart PA, Mansard N, Solà J.}
+			{Contact Forces Preintegration for Estimation in Legged Robotics using Factor Graphs}
+			{ICRA, 2021}
+			\item \publication
+			{\textbf{Fourmy M}, Atchuthan D, Mansard N, Sola J, Flayols, T.}
+			{Absolute humanoid localization and mapping based on IMU Lie group and fiducial markers}
+			{Humanoids, 2019}
+		\end{itemize}
 
+	\cvsection{Skills}
+	\vspace{-0.3cm}
+	%
+	\begin{minipage}[t]{.49\textwidth}
+		\begin{cvskills}
+			\cvskill{Programming}{Python, C++, Javascript}
+			\cvskill{Datascience}{Pytorch, Scikit-learn, SQL}
+			\cvskill{Robotics}{ROS2, Pinocchio, Croccodyl}
+			\cvskill{Tools}{Git, Docker, \LaTeX, Linux}
+			\cvskill{Web}{Django, HTML, CSS}
+		\end{cvskills}
+	\end{minipage}
+	%
+	\begin{minipage}[t]{.49\textwidth}
+		\begin{cvskills}
+			\cvskill{Languages}{French (native), English (fluent)}
+			\cvskill{Interests}{Music, climbing}
+		\end{cvskills}
+	\end{minipage}
 \end{document}

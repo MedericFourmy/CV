@@ -138,60 +138,66 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set font for header (default is Roboto)
-\newfontfamily\headerfont[
-Path=\@fontdir,
-UprightFont=*-Regular,
-ItalicFont=*-Italic,
-BoldFont=*-Bold,
-BoldItalicFont=*-BoldItalic,
-]{Roboto}
+\newfontfamily\headerfont{Latin Modern Roman}
+\newfontfamily\headerfontlight{Latin Modern Roman}
+\newfontfamily\footerfont{Latin Modern Roman}
+\newfontfamily\bodyfont{Latin Modern Roman}
+\newfontfamily\bodyfontlight{Latin Modern Roman}
 
-\newfontfamily\headerfontlight[
-Path=\@fontdir,
-UprightFont=*-Thin,
-ItalicFont=*-ThinItalic,
-BoldFont=*-Medium,
-BoldItalicFont=*-MediumItalic,
-]{Roboto}
 
-% Set font for footer (default is Source Sans Pro)
-\newfontfamily\footerfont[
-Path=\@fontdir,
-UprightFont=*-Regular,
-ItalicFont=*-It,
-BoldFont=*-Bold
-]{SourceSansPro}
+% \newfontfamily\headerfont[
+% Path=\@fontdir,
+% UprightFont=*-Regular,
+% ItalicFont=*-Italic,
+% BoldFont=*-Bold,
+% % BoldItalicFont=*-BoldItalic,
+% ]{Roboto}
 
-% Set font for body (default is Source Sans Pro)
-\newfontfamily\bodyfont[
-Path=\@fontdir,
-UprightFont=*-Regular,
-ItalicFont=*-It,
-BoldFont=*-Bold,
-BoldItalicFont=*-BoldIt
-]{SourceSansPro}
+% \newfontfamily\headerfontlight[
+% Path=\@fontdir,
+% UprightFont=*-Thin,
+% ItalicFont=*-ThinItalic,
+% BoldFont=*-Medium,
+% BoldItalicFont=*-MediumItalic,
+% ]{Roboto}
 
-\newfontfamily\bodyfontlight[
-Path=\@fontdir,
-UprightFont=*-Light,
-ItalicFont=*-LightIt,
-BoldFont=*-Semibold,
-BoldItalicFont=*-SemiboldIt
-]{SourceSansPro}
+% % Set font for footer (default is Source Sans Pro)
+% \newfontfamily\footerfont[
+% Path=\@fontdir,
+% UprightFont=*-Regular,
+% ItalicFont=*-ThinItalic,
+% BoldFont=*-Bold
+% ]{Roboto}
+
+% % Set font for body (default is Source Sans Pro)
+% \newfontfamily\bodyfont[
+% Path=\@fontdir,
+% UprightFont=*-Regular,
+% ItalicFont=*-ThinItalic,
+% BoldFont=*-Bold,
+% % BoldItalicFont=*-BoldIt
+% ]{Roboto}
+
+% \newfontfamily\bodyfontlight[
+% Path=\@fontdir,
+% UprightFont=*-Light,
+% % ItalicFont=*-LightIt,
+% % BoldFont=*-Semibold,
+% % BoldItalicFont=*-SemiboldIt
+% ]{Roboto}
 
 
 %-------------------------------------------------------------------------------
 %                Configuration for styles
 %-------------------------------------------------------------------------------
-\newcommand{\firstnamestyle}[1]{{\fontsize{30pt}{1em}\headerfontlight #1}}
-\newcommand{\lastnamestyle}[1]{{\fontsize{30pt}{1em}\headerfontlight #1}}
+\newcommand{\namestyle}[1]{{\fontsize{25pt}{1em}\headerfontlight #1}}
 \newcommand{\addressstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 \newcommand{\emailstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 \newcommand{\telephonestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{awesome} #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
@@ -206,7 +212,7 @@ BoldItalicFont=*-SemiboldIt
 }}
 
 % For elements of skill
-\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\skilltypestyle}[1]{{\raggedleft \fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
 
 % For languages
@@ -247,29 +253,19 @@ BoldItalicFont=*-SemiboldIt
 \newcommand*{\ifempty}[3]{\ifthenelse{\isempty{#1}}{#2}{#3}}
 
 
-\newcommand{\header}[7]{
-	\begin{center}
-		\firstnamestyle{#1} \lastnamestyle{#2} \\
-		\vspace{0.4cm}
-		\addressstyle{#3} \\
-		\emailstyle{#4}~~\fullgraycircle~~\telephonestyle{#5}~~\fullgraycircle~~\href{https://www.linkedin.com/in/mederic-fourmy-738aa3110/}{\faLinkedinSquare}  \\
-	\end{center}
-	\ifempty{#6#7}
-	{}
-	{
-		\vspace{0.2cm}
-		\entrytitlestyle{\underline{\textbf{#6}:} #7}
-	}
-	
-}
-
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{
 
 	\vspace{0.2cm}
 	\sectionstyle{#1}
-	\hrulefill{0.2pt}
+	% OPTION 1: line next to the title
+	\vspace{0.1cm}
+	\hrule{}
+	% OPTION 2: line below the title
+	% \hrulefill{0.2pt}
+	%
+	% \vspace{0.1cm}
 
 	\vspace{-0.1cm}
 }
@@ -283,8 +279,9 @@ BoldItalicFont=*-SemiboldIt
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{
+	% \vspace{0.1cm}
 	\setlength\tabcolsep{0pt}
-	\setlength{\extrarowheight}{0pt}
+	\setlength{\extrarowheight}{3pt}
 	% deal with the space between rows
 	\renewcommand{\arraystretch}{0.7}
 	%\begin{tabular*}{width}[pos]{cols}
@@ -338,7 +335,7 @@ BoldItalicFont=*-SemiboldIt
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{
-	\skilltypestyle{#1} & \skillsetstyle{#2}
+	\raggedleft\skilltypestyle{#1} & \skillsetstyle{#2}
 	\\
 }
 
